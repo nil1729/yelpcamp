@@ -1,0 +1,24 @@
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.img-thumbnail img {
+    width: 100%!important;
+}
+
+.img-thumbnail figure img {
+    height: 12rem;
+}
+
+.form-container {
+    width: 35%;
+    margin: 25px auto;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        width: 100%;
+        margin: 25px auto;
+    }
+}
