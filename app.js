@@ -9,26 +9,14 @@ var express = require('express'),
     methodOverride = require('method-override'),
     commentRoutes = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
-    indexRoutes = require('./routes/index');
+    indexRoutes = require('./routes/index'),
+    db = require('./config/keys'),
+    connectDB = require('./config/db');
 // ==================================
 //  Database Connection 
 // ==================================
-
-// LocalHost===========================================
-mongoose.connect("mongodb://localhost/yelp_camp", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-    .then(() => console.log("connected To DataBase..."))
-    .catch(err => console.log("Refuse to Connect...", err));
-// MongoLab (Mongo Atlas DB)======================================
-// mongoose.connect("mongodb+srv://yelpcamp:nilanjan@yelpcamp-t9dj6.mongodb.net/test?retryWrites=true&w=majority", {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true
-//     })
-//     .then(() => console.log("connected To DataBase..."))
-//     .catch(err => console.log("Refuse to Connect...", err));
-// // =============================
+connectDB(db);
+// =============================
 //  App Configuration
 // ==============================
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -64,11 +52,7 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 // ===================== 
 // Server Connection 
 // ====================//
-// for Localhost Server==============================
-app.listen(3000, () => {
-    console.log(`YelpCamp Server Started !!!`);
+const PORT = 3000 || process.env.PORT;
+app.listen(PORT, process.env.IP, () => {
+    console.log(`YelpCamp Server Started on port ${PORT}`);
 });
-// For Heroku Server=================================
-// app.listen(process.env.PORT, process.env.IP, () => {
-//     console.log(`YelpCamp Server Started !!!`);
-// });

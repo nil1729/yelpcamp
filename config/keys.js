@@ -1,0 +1,2 @@
+mongoURI = ``;
+module.exports = mongoURI;
