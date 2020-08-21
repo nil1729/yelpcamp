@@ -1,4 +1,5 @@
-## NodeJS Application
+## Fullstack NodeJS Application
+This is my first Full Stack Application using Node JS and MongoDB as Database, contains CRUD operations, Passport Authentication, Showing Flash Messages, Authorization of Resources etc.
 
 ### Setup on Local Environment
 
