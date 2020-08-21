@@ -1,2 +1,0 @@
-mongoURI = ``;
-module.exports = mongoURI;
