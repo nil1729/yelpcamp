@@ -1,12 +1,12 @@
 {
-    "name": "v1",
-    "version": "1.0.0",
+    "name": "yelp-camp-v2",
+    "version": "1.5.0",
     "description": "",
-    "main": "app.js",
+    "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node app",
-        "dev": "nodemon app"
+        "start": "node index",
+        "dev": "nodemon index"
     },
     "author": "Nilanjan Deb",
     "license": "ISC",
