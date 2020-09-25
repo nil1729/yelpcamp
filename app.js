@@ -30,7 +30,7 @@ app.use(flash());
 // ====================================
 app.use(
 	require('express-session')({
-		secret: 'My First Backend Projrct',
+		secret: process.env.SESSION_SECRET,
 		resave: false,
 		saveUninitialized: false,
 	})
